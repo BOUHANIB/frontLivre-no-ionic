@@ -1,0 +1,51 @@
+<nav class="p-3">
+  <div class="card">
+    <div class="card-header">
+      Livre Id = {{livreId}}
+    </div>
+    <div class="card-body" *ngIf="livreFormGroup">
+      <div class="row">
+        <div class="col-md-6">
+
+            <div class="mb-3">
+              <label class="form-label">Titre</label>
+              <input class="form-control" formControlName="titre">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Auteur</label>
+              <input class="form-control" formControlName="auteur">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Editeur</label>
+              <input class="form-control" formControlName="editeur">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Date edition</label>
+              <input class="form-control" formControlName="date_edition">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Prix</label>
+              <input class="form-control" formControlName="prix">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Isbn</label>
+              <input class="form-control" formControlName="isbn">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Exposant</label>
+              <select class="form-control" formControlName="exposant">
+                <option *ngFor="let exposant of exposants" [value]="exposant.exposantId">{{ exposant.nom }}</option>
+              </select>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

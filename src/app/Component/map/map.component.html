@@ -1,0 +1,35 @@
+<nav class="p-3">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <div class="card-body d-flex justify-content-center align-items-center">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <button type="button" class="btn btn-secondary" (click)="searchLocation()">
+                <i class="bi bi-search"></i></button>
+            </div>
+            <input class="form-control" type="text" placeholder="Enter a title" [(ngModel)]="locationTitle" (keyup.enter)="searchLocation()">
+          </div>
+        </div>
+      </div>
+      <div class="position-relative">
+        <img src="assets/Map.png" alt="Workplace" usemap="#image-map" style="margin-left: 0;">
+        <map name="image-map">
+          <area target="" alt="A11" title="A11" href="A11" coords="530,126" shape="poly">
+          <area target="" alt="A22" title="A22" href="A22" coords="482,173" shape="poly">
+          <area target="" alt="B11" title="B11" href="B11" coords="180,44" shape="poly">
+          <area target="" alt="B22" title="B22" href="B22" coords="77,167" shape="poly">
+          <area target="" alt="C11" title="C11" href="C11" coords="158,366" shape="poly">
+          <area target="" alt="C22" title="C22" href="C22" coords="62,448" shape="poly">
+          <area target="" alt="D11" title="D11" href="D11" coords="285,379" shape="poly">
+          <area target="" alt="D22" title="D22" href="D22" coords="366,453" shape="poly">
+          <area target="" alt="E11" title="E11" href="E11" coords="513,371" shape="poly">
+          <area target="" alt="E22" title="E22" href="E22" coords="410,322" shape="poly">
+        </map>
+        <div id="locationMarker" class="location-marker" [style.left.px]="markerX" [style.top.px]="markerY" *ngIf="markerVisible">
+          <i class="bi bi-bookmark-fill"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
